@@ -1,0 +1,14 @@
+services:
+  transporter:
+    image: kazetsu/clica_apigateway:latest
+    environment:
+      PORT: 8081
+      NODE_ENV: "dev"
+    ports:
+      - 8081:8081
+    networks:
+      - clica
+
+networks:
+  clica:
+    driver: bridge

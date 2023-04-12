@@ -1,0 +1,5 @@
+{
+    "authnz": "localhost:8080",
+    "post": "localhost:4040",
+    "profile": "localhost:7070"
+}
