@@ -94,10 +94,21 @@ module.exports = [
                     custom: []
                 }
             }, {
+                method: "get",
+                uri: "/user",
+                remoteMethod: "get",
+                remoteUri: "/profile/user",
+                middlewares: {
+                    authentication: true,
+                    profile: true,
+                    authorization: false,
+                    custom: []
+                }
+            }, {
                 method: "post",
-                uri: "/user/id",
+                uri: "/user/media",
                 remoteMethod: "post",
-                remoteUri: "/profile/user/id",
+                remoteUri: "/media/id",
                 middlewares: {
                     authentication: true,
                     profile: true,
@@ -116,9 +127,9 @@ module.exports = [
                     custom: []
                 }
             }, {
-                method: "put",
-                uri: "/user/update",
-                remoteMethod: "put",
+                method: "patch",
+                uri: "/user",
+                remoteMethod: "patch",
                 remoteUri: "/profile/user",
                 middlewares: {
                     authentication: true,
@@ -127,9 +138,9 @@ module.exports = [
                     custom: []
                 }
             }, {
-                method: "put",
+                method: "patch",
                 uri: "/tenante/update",
-                remoteMethod: "put",
+                remoteMethod: "patch",
                 remoteUri: "/profile/tenante",
                 middlewares: {
                     authentication: true,

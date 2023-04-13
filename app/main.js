@@ -44,37 +44,7 @@ routers.getRouters().map((route, i) => {
 
 
 
-// app.all('/signin', (req, res) => {
-//     console.log("hiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii", req.body)
 
-
-// axios.post("http://localhost:8080/api/v1/auth/signin", req.body)
-// axios({
-//     url: "http://localhost:8080/api/v1/auth/signin",
-//     headers: req.headers,
-//     method: "post",
-//     data: req.body
-// })
-//     headers = {
-//         cookie: req.headers["cookie"],
-//         authorization: req.headers["authorization"],
-//         'content-type': req.headers["content-type"]
-//     }
-//     axios({
-//         method: 'post',
-//         url: "http://localhost:8080/api/v1/auth/signin",
-//         data: req.body,
-//         params: req.params,
-//         headers,
-//     }).then(result => {
-//         res.set(result.headers)
-//         res.json(result)
-//     }).catch(err => {
-//         let error = err.response.data
-//         return res.status(error.status).json(error)
-//     })
-// })
-// error handler
 app.use(function (err, req, res, next) {
     // set locals, only providing error in development
     res.locals.message = err.message;
@@ -83,7 +53,7 @@ app.use(function (err, req, res, next) {
     // render the error page
     res.status(err.status || 500);
     console.error(err)
-    res.json(err);
+    res.status(err.status).json("err happend");
 });
 
 module.exports = app;
