@@ -26,7 +26,58 @@ module.exports = [
                 authorization: false,
                 custom: []
             }
-        },]
+        }, {
+            method: "post",
+            uri: "/signup/send/phone",
+            remoteMethod: "post",
+            remoteUri: "/signup/send/phone",
+            middlewares: {
+                authentication: false,
+                authorization: false,
+                custom: []
+            }
+        }, {
+            method: "post",
+            uri: "/signup/verify/phone",
+            remoteMethod: "post",
+            remoteUri: "/signup/verify/phone",
+            middlewares: {
+                authentication: false,
+                authorization: false,
+                custom: []
+            }
+        }, {
+            method: "post",
+            uri: "/signup/send/email",
+            remoteMethod: "post",
+            remoteUri: "/signup/send/email",
+            middlewares: {
+                authentication: false,
+                authorization: false,
+                custom: []
+            }
+        }, {
+            method: "post",
+            uri: "/signup/verify/email",
+            remoteMethod: "post",
+            remoteUri: "/signup/verify/email",
+            middlewares: {
+                authentication: false,
+                authorization: false,
+                custom: []
+            }
+        }, {
+            method: "post",
+            uri: "/signup",
+            remoteMethod: "post",
+            remoteUri: "/signup",
+            middlewares: {
+                authentication: false,
+                authorization: false,
+                custom: []
+            }
+        },
+        ]
     },
     //------------------user info api----------------------------
     {
