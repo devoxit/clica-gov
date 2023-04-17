@@ -291,7 +291,7 @@ module.exports = [
         },
         {
             method: "post",
-            uri: "/comment",
+            uri: "/comment/list",
             remoteMethod: "post",
             remoteUri: "/relation/comment/of/post",
             middlewares: {
@@ -299,7 +299,20 @@ module.exports = [
                 profile: true,
                 authorization: false,
                 custom: []
+            },
+        },
+        {
+            method: "post",
+            uri: "/comment",
+            remoteMethod: "post",
+            remoteUri: "/relation/comment/on/post",
+            middlewares: {
+                authentication: true,
+                profile: true,
+                authorization: false,
+                custom: []
             }
+
         },
         ]
 
