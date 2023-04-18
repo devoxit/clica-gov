@@ -1,6 +1,7 @@
 const express = require('express');
 const session = require('express-session');
 const cookieParser = require('cookie-parser');
+const bodyParser = require('body-parser');
 const logger = require('morgan');
 const cors = require("cors")
 const app = express();
@@ -24,6 +25,7 @@ const expressParserUrlMiddleware = function (config) {
 };
 
 app.use(logger('dev'));
+// app.use(bodyParser.raw({ limit: "50mb", extended: true }))
 app.use(expressParserJsonMiddleware());
 app.use(expressParserUrlMiddleware({ extended: false }));
 app.use(cookieParser());

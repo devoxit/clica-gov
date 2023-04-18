@@ -19,10 +19,11 @@ class RouterMap {
 
                 let router = this.#router()
                 router[method](uri, ...baseMiddleware, ...(middlewares.custom || []), (req, res) => {
-
+                    console.log(uri)
                     // req.url = `${req.protocol}://${serviceReg[service]}${remoteBaseUrl}${remoteUri}`
                     var apiProxy = proxy(`${req.protocol}://${serviceReg[service]}`, {
                         proxyReqPathResolver: function (req, res) {
+                            console.log(req.url)
                             var args = req.url.split("?")
                             var query = null
                             if (args.length > 1)
@@ -35,7 +36,8 @@ class RouterMap {
                             let r = srcReq
                             return proxyReqOpts;
                         },
-                        preserveReqSession: true
+                        preserveReqSession: true,
+                        limit: '50mb'
                     });
 
                     return apiProxy(req, res)
