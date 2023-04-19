@@ -124,7 +124,7 @@ module.exports = [
         uris: [
             {
                 method: "post",
-                uri: "/user",
+                uri: "/user/list",
                 remoteMethod: "post",
                 remoteUri: "/profile/user/list",
                 middlewares: {
@@ -135,7 +135,7 @@ module.exports = [
                 }
             }, {
                 method: "post",
-                uri: "/tenante",
+                uri: "/tenante/list",
                 remoteMethod: "post",
                 remoteUri: "/profile/tenante/list",
                 middlewares: {
@@ -207,6 +207,17 @@ module.exports = [
                 middlewares: {
                     authentication: false,
                     profile: false,
+                    authorization: false,
+                    custom: []
+                }
+            }, {
+                method: "post",
+                uri: "/user",
+                remoteMethod: "post",
+                remoteUri: "/profile/user",
+                middlewares: {
+                    authentication: true,
+                    profile: true,
                     authorization: false,
                     custom: []
                 }
@@ -306,6 +317,137 @@ module.exports = [
             uri: "/comment",
             remoteMethod: "post",
             remoteUri: "/relation/comment/on/post",
+            middlewares: {
+                authentication: true,
+                profile: true,
+                authorization: false,
+                custom: []
+            }
+
+        },
+        ]
+
+    },
+    //-------------------event + event relation api--------------------------
+    {
+        service: "event",
+        baseUrl: "/app/event",
+        remoteBaseUrl: "/api/v1",
+        uris: [{
+            method: "post",
+            uri: "/",
+            remoteMethod: "post",
+            remoteUri: "/event/list",
+            middlewares: {
+                authentication: true,
+                profile: true,
+                authorization: false,
+                custom: []
+            }
+        },
+        {
+            method: "post",
+            uri: "/create",
+            remoteMethod: "post",
+            remoteUri: "/event",
+            middlewares: {
+                authentication: true,
+                profile: true,
+                authorization: false,
+                custom: []
+            }
+        },
+        {
+            method: "put",
+            uri: "/update",
+            remoteMethod: "put",
+            remoteUri: "/event",
+            middlewares: {
+                authentication: true,
+                profile: true,
+                authorization: false,
+                custom: []
+            }
+        },
+        {
+            method: "post",
+            uri: "/id",
+            remoteMethod: "post",
+            remoteUri: "/event/id",
+            middlewares: {
+                authentication: true,
+                profile: true,
+                authorization: false,
+                custom: []
+            }
+        },
+        {
+            method: "delete",
+            uri: "/",
+            remoteMethod: "delete",
+            remoteUri: "/post",
+            middlewares: {
+                authentication: true,
+                profile: true,
+                authorization: false,
+                custom: []
+            }
+        },
+        {
+            method: "post",
+            uri: "/media",
+            remoteMethod: "post",
+            remoteUri: "/media/list",
+            middlewares: {
+                authentication: true,
+                profile: true,
+                authorization: false,
+                custom: []
+            }
+        },
+        {
+            method: "post",
+            uri: "/comment/list",
+            remoteMethod: "post",
+            remoteUri: "/relation/comment/of/event",
+            middlewares: {
+                authentication: true,
+                profile: true,
+                authorization: false,
+                custom: []
+            },
+        },
+        {
+            method: "post",
+            uri: "/comment",
+            remoteMethod: "post",
+            remoteUri: "/relation/comment/on/event",
+            middlewares: {
+                authentication: true,
+                profile: true,
+                authorization: false,
+                custom: []
+            }
+
+        },
+        {
+            method: "post",
+            uri: "/reactions",
+            remoteMethod: "post",
+            remoteUri: "/relation/reaction/of/event",
+            middlewares: {
+                authentication: true,
+                profile: true,
+                authorization: false,
+                custom: []
+            }
+
+        },
+        {
+            method: "post",
+            uri: "/react",
+            remoteMethod: "post",
+            remoteUri: "/relation/react/to/event",
             middlewares: {
                 authentication: true,
                 profile: true,
