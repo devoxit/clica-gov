@@ -168,6 +168,17 @@ module.exports = [
                 }
             }, {
                 method: "post",
+                uri: "/user/media/list",
+                remoteMethod: "post",
+                remoteUri: "/media/list",
+                middlewares: {
+                    authentication: true,
+                    profile: true,
+                    authorization: false,
+                    custom: []
+                }
+            }, {
+                method: "post",
                 uri: "/tenante/id",
                 remoteMethod: "post",
                 remoteUri: "/profile/tenante/id",
