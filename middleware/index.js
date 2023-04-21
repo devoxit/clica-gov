@@ -1,5 +1,5 @@
 const axios = require("axios")
-const serviceReg = require('../routeMapping/service.json')
+const serviceReg = require('../routeMapping/service')
 const middlewares = {
     authenticate: async (req, res, next) => {
         let url = `${req.protocol}://${serviceReg['authnz']}/api/v1/token/auth`

@@ -38,7 +38,7 @@ app.use(session({
     secure: true
 }))
 
-
+// console.log(process.env.NODE_ENV)
 
 routers.getRouters().map((route, i) => {
     app.use(route.baseUrl, route.router);

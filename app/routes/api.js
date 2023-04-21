@@ -336,6 +336,30 @@ module.exports = [
             }
 
         },
+        {
+            method: "patch",
+            uri: "/relation",
+            remoteMethod: "patch",
+            remoteUri: "/relation",
+            middlewares: {
+                authentication: true,
+                profile: true,
+                authorization: false,
+                custom: []
+            }
+        }, {
+            method: "delete",
+            uri: "/relation",
+            remoteMethod: "delete",
+            remoteUri: "/relation",
+            middlewares: {
+                authentication: true,
+                profile: true,
+                authorization: false,
+                custom: []
+            }
+
+        },
         ]
 
     },
