@@ -288,9 +288,9 @@ module.exports = [
             }
         },
         {
-            method: "delete",
-            uri: "/",
-            remoteMethod: "delete",
+            method: "patch",
+            uri: "/delete",
+            remoteMethod: "patch",
             remoteUri: "/post",
             middlewares: {
                 authentication: true,
