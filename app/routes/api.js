@@ -337,6 +337,42 @@ module.exports = [
 
         },
         {
+            method: "post",
+            uri: "/reaction/list",
+            remoteMethod: "post",
+            remoteUri: "/relation/reaction/of/post",
+            middlewares: {
+                authentication: true,
+                profile: true,
+                authorization: false,
+                custom: []
+            },
+        },
+        {
+            method: "post",
+            uri: "/react",
+            remoteMethod: "post",
+            remoteUri: "/relation/react/to/post",
+            middlewares: {
+                authentication: true,
+                profile: true,
+                authorization: false,
+                custom: []
+            },
+        },
+        {
+            method: "post",
+            uri: "/relation",
+            remoteMethod: "post",
+            remoteUri: "/relation/list",
+            middlewares: {
+                authentication: true,
+                profile: true,
+                authorization: false,
+                custom: []
+            },
+        },
+        {
             method: "patch",
             uri: "/relation",
             remoteMethod: "patch",
