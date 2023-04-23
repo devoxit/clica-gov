@@ -2,5 +2,5 @@
     "authnz": "test.locaco.net:8080",
     "post": "15.152.60.125:4500",
     "profile": "15.152.60.125:7070",
-    "event": "15.152.60.125:4600"
+    "event": "localhost:4600"
 }

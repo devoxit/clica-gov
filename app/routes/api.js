@@ -527,6 +527,56 @@ module.exports = [
             }
 
         },
+        {
+            method: "post",
+            uri: "/join",
+            remoteMethod: "post",
+            remoteUri: "/relation/join/event",
+            middlewares: {
+                authentication: true,
+                profile: true,
+                authorization: false,
+                custom: []
+            }
+
+        },
+        {
+            method: "post",
+            uri: "/join/list",
+            remoteMethod: "post",
+            remoteUri: "/relation/join/of/event",
+            middlewares: {
+                authentication: true,
+                profile: true,
+                authorization: false,
+                custom: []
+            }
+
+        },
+        {
+            method: "post",
+            uri: "/relation",
+            remoteMethod: "post",
+            remoteUri: "/relation/list",
+            middlewares: {
+                authentication: true,
+                profile: true,
+                authorization: false,
+                custom: []
+            },
+        }, {
+            method: "delete",
+            uri: "/relation",
+            remoteMethod: "delete",
+            remoteUri: "/relation",
+            middlewares: {
+                authentication: true,
+                profile: true,
+                authorization: false,
+                custom: []
+            }
+
+        },
         ]
 
     }
